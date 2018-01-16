@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<servlet>
+		<servlet-name>CreationEchange</servlet-name>
+		<servlet-class>serverBay.servlets.CreationEchange</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CreationEvenement</servlet-name>
+		<servlet-class>serverBay.servlets.CreationEvenement</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CreationUtilisateur</servlet-name>
+		<servlet-class>serverBay.servlets.CreationUtilisateur</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CreationEchange</servlet-name>
+		<url-pattern>/creationEchange</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreationEvenement</servlet-name>
+		<url-pattern>/creationEvenement</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreationUtilisateur</servlet-name>
+		<url-pattern>/creationUtilisateur</url-pattern>
+	</servlet-mapping>
+</web-app>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Eco-Leaves</title>
+  <script src="js/index.js"></script>
+  
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
+
+      <link rel="stylesheet" href="css/login.css">
+
+  
+</head>
+
+<body>
+  <div class="login-wrap">
+  	<img class="logo" src="LogoEcoLeaves.png">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="hr1"></div>
+				<div class="group">
+					<input type="submit" class="button" value="Sign In" onclick="location.href = 'index.html';">
+				</div>
+				<div class="hr"></div>
+				<div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div>
+			</div>
+			<div class="sign-up-htm">
+				<div class="group">
+					<label for="user" class="label">Username</label>
+					<input id="user" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Repeat Password</label>
+					<input id="pass" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Email Address</label>
+					<input id="pass" type="text" class="input">
+				</div>
+				<div class="group">
+					<input type="submit" class="button" value="Create account">
+				
+
+				<div class="login-options">With your social media account</div>
+                	
+                    <div class="facebook" data-scope="email" onclick="fbStatus();">Facebook</div>
+                    <a class="google" href="#">Google+</a>
+          
+				<div class="hr"></div>
+			</div>
+		</div>
+	</div>
+</div>
+ <script>
+ function fbInit() {
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: 'XXXXX',
+                status: false,
+                cookie: true,
+                xfbml: true
+            });
+
+            //auth.statusChange
+            FB.Event.subscribe('auth.authResponseChange', function (response) {
+                if (response.status.indexOf('connected') != -1) {
+                    // the user is logged in and has authenticated your
+                    // app, and response.authResponse supplies
+                    // the user's ID, a valid access token, a signed
+                    // request, and the time the access token 
+                    // and signed request each expire
+                    var uid = response.authResponse.userID;
+                    var accessToken = response.authResponse.accessToken;
+
+                    //Handle the access token
+
+                    });
+
+                } else if (response.status.indexOf('not_authorized') != -1) {
+                    // the user is logged in to Facebook, 
+                    // but has not authenticated your app
+                } else {
+                    // the user isn't logged in to Facebook.
+                }
+            });
+        };
+    (function (d) {
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) { return; }
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+    } (document));
+}
+
+function fbStatus() {
+
+    //auth.statusChange
+    FB.Event.subscribe('auth.authResponseChange', function (response) {
+        if (response.status.indexOf('connected') != -1) {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token 
+            // and signed request each expire
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
+
+            //Handle the access token
+
+            });
+
+        } else if (response.status.indexOf('not_authorized') != -1) {
+            // the user is logged in to Facebook, 
+            // but has not authenticated your app
+        } else {
+            // the user isn't logged in to Facebook.
+        }
+    });
+
+    FB.getLoginStatus(function (response) {
+        if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token 
+            // and signed request each expire
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
+
+           //Handle the access token
+
+            });
+        } else if (response.status === 'not_authorized') {
+            // the user is logged in to Facebook, 
+            // but has not authenticated your app
+        } else {
+            // the user isn't logged in to Facebook.
+        }
+    });
+}
+ </script>
+  
+</body>
+</html>
